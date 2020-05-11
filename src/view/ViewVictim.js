@@ -1,10 +1,10 @@
 class ViewVictim{
     viewVictimInformation(pVictimInformation){
-        let victim = ``;
+       // console.log(pVictimInformation)
+       let victim = ``;
         victim+=`<div class="container">
-            <h3 class="h3">KILLING SERVICE </h3>
             <div class="row">`
-         pVictimInformation.killList.map((data) => {
+         pVictimInformation.map((data) => {
             victim += `
             <div class="col-md-3 col-sm-6" >
             <div class="product-grid2">
@@ -15,7 +15,7 @@ class ViewVictim{
                     </a>
                 </div>
                 <div class="product-content">
-                    <h3 class="title"><a id="${data.customerName}" href="#">${data.customerName}</a></h3>
+                    <h3 class="title"><a id="${data.victimName}" href="#">${data.victimName}</a></h3>
                     
                 </div>
             </div>
@@ -25,6 +25,6 @@ class ViewVictim{
         </div>
         <hr> `;
         
-        document.querySelector("#victim").innerHTML = victim;
+        document.querySelector("victim").innerHTML = victim;
       }
     }

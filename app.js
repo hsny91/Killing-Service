@@ -102,5 +102,9 @@ new DBManager();
 
 const viewCustomer=new ViewCustomer();// sepette guncellemeleri ekrana yazdiran  classi tutan degisken.
 const viewVictim= new ViewVictim;
+const viewVictimStatus=new ViewVictimStatus();
 new Manager(viewCustomer.viewCustomerInformation,
-   viewVictim.viewVictimInformation ).start();
+   viewVictim.viewVictimInformation,
+   viewVictimStatus.viewVictimStatusInformation).start();
+
+  
