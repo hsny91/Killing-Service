@@ -27,7 +27,7 @@ class DBManager {
   } 
     
 ]
-   //this.checkData(customer);
+  this.checkData(this.customer);
   
     
 }

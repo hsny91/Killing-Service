@@ -1,11 +1,7 @@
 class Manager {
   victimList=null;
   storageList=null;
-  constructor(
-    pViewCustomerInformation,
-    pViewVictimInformation,
-    pViewVictimStatusInformation
-  ) {
+  constructor( pViewCustomerInformation,pViewVictimInformation, pViewVictimStatusInformation ) {
     this.dbManager = new DBManager();
     this.viewCustomerInformation = pViewCustomerInformation;
     this.viewVictimInformation = pViewVictimInformation;
@@ -50,8 +46,15 @@ pVictimList.map((victim)=>{document.querySelector(`#${victim.victimName}`).addEv
   checkVictimSatus(pVictim){
     document.querySelector(`#${pVictim.victimName}-H`).addEventListener("click",()=>{
     pVictim.victimStatus=!pVictim.victimStatus
-    console.log(this.storageList)
+    //console.log(this.storageList)
     this.dbManager.setItem("victim",this.storageList)
+    console.log(pVictim.victimStatus)
+    //this.viewVictimStatusInformation(pVictim);
+    if(pVictim.victimStatus)
+    document.querySelector(`#${pVictim.victimName}`).style.color="red";
+    else{
+      document.querySelector(`#${pVictim.victimName}`).style.color="black";
+    }
    })
    
   }
@@ -59,7 +62,7 @@ pVictimList.map((victim)=>{document.querySelector(`#${victim.victimName}`).addEv
 
 
 
-
+ÄÄ
 
 
 

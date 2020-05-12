@@ -15,7 +15,8 @@ class ViewCustomer {
                 </a>
             </div>
             <div class="product-content">
-                <h3 class="title"><a id="${data.customerName}" href="#"><strong>${data.customerName}</strong></a></h3>
+                <h3 class="title">
+                <a id="${data.customerName}" href="#">${data.customerName}</a></h3>
             </div>
         </div>
     </div>`

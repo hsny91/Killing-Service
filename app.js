@@ -1,102 +1,24 @@
-
 /**
- * -Service(customerDB)
- *   Müşterilerin verilerini tuttugumuz modelimiz
- *      -custumerList bu liste eğer local storege boş ,ise iöerisine yazılacak degerleri tutmaktadır
- *      -local stordsajfdsaj dolu ise local store verileri cekecegiz ve bunu customer liste eşitleyecegiz
- * -Local 
- *  localStorage metodlarını saklayacagımız bir class yapısı
- * -Shooter Manager
- *  start metdoumuz olacak ve bu metod aracılıgı ıle tetıkleyıcılerı burada calıstıracagız
- *  birr eventlistener ekleyecgız(map) kullanacgız (view push edecegız)
- *      *show-hidden metodları calısacak (3 defa en alt lısteye ulasana kadar bu dongu devam edecek)
- *  checkbox icin bir event (checked ve control metdolarını cagıracak)
- * checked (true/false)(setıtem)
- * control(arrayı guncelleyen metdod)
+ * KIRALIK KATIL ISMET'IN IS TAKIP DEFTERI
+ * Uygulama kiralik bir katilin is defteri olarak calismalidir.
+ * Katil Ismet musteri isimlerini,musterinin oldurmek istedigi kisi isimlerini ve maktullerin bilgilerini(adreslerini) uygulamada tutar.
+ * Ismet musterilerinin isimlerine tikladiginda, musterilerin oldurmek istedigi kisi veya kisilerin isimleri ekrana gelir.
+ * Ismet herhangi bir maktulun ustunu tikladiginda ise maktulun adres bilgileri, olu mu sag mi oldugu ekrana yazilir.
  * 
- * ====================================
- * -view
- * -AllListView(map)
- *  -CustomerView(map event listenr)
- *   -PersonView(map event listenr)
+ * ANALIZ
+ * - MODEL OBJELERI: Manager
+ * - VIEW OBJELERI: ViewCustomer,ViewVictim,VievVictimStatus
+ * - SERVICE OBJELERI: DBManager
+ * 
+ * DBManager musteri isimlerini ve maktul bilgilerini tutan diziyi olusturur ve LocalStorage' ye kaydeder. 
+ * Manager, LocalStorage' deki musteri ve maktul bilgilerini alir ve bir degiskene kaydeder.
+ * Manger, LocalStorage'dan aldigi musteri isimlerini ViewCustomer araciligi ile ekranda gosterir.
+ * Manager,musteri isimlerine tiklandigi durumda musterinin oldurmek istedigi maktul isimlerini ViewVictim araciligi ile ekranda gosterir.
+ * Manger, maktullerden herhangi biri uzerinde tiklandiginda maktulun adres bilgilerini, olu mu sag mi oldugunu ViewVictimStatus araciligi ile ekranda gosterir.
+ * Manager, Maktul bilgilerinin oldugu ekranda, maktulun olmesi durumunda butona tiklayarak maktulun statusunu degistire
+ * 
  */
-//================================================
-//================================================
-//================================================
-//================================================
-//================================================
-/**
- * let names = [{
-        name: "boş hali",
-        killist: [{
-            killName: "mehmet",
-            killAdress: ["adress1", "adres2", "adres3"],
-            killStatus: false
-        }]
-    },
-    {
-        name: "veli",
-        killist: [{
-            killName: "mehmet",
-            killAdress: ["adress1", "adres2", "adres3"],
-            killStatus: false
-        }]
-    },
-    {
-        name: "kırkdokuz",
-        killist: [{
-            killName: "mehmet",
-            killAdress: ["adress1", "adres2", "adres3"],
-            killStatus: false
-        }]
-    },
-    {
-        name: "elli",
-        killist: [{
-            killName: "mehmet",
-            killAdress: ["adress1", "adres2", "adres3"],
-            killStatus: false
-        }]
-    },
-    {
-        name: "bitti",
-        killist: [{
-            killName: "mehmet",
-            killAdress: ["adress1", "adres2", "adres3"],
-            killStatus: false
-        }]
-    },
-]
-console.log(names)
-controlled = () => {
-    if (!localStorage.getItem("names")) {
-        localStorage.setItem("names", JSON.stringify(names));
-    } else {
-        names = JSON.parse(localStorage.getItem("names"));
-        console.log(names)
-    }
-}
-controlled();
 
-getItemKill = () => {
-    return JSON.parse(localStorage.getItem("names"));
-}
-
-getItemKill().map((x)=>{
-    console.log(x)
-})
-degistir=()=>{
-    names[1].name="mahmut"
-    localStorage.setItem("names", JSON.stringify(names));
-    controlled()
-}
-
-
-/* let storedNames = JSON.parse(localStorage.getItem("names"));
-console.log(storedNames) */
- 
-
-//new DBManager();
 
 //localStorage.clear();
 
