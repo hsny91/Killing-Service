@@ -3,7 +3,6 @@
  */
 class ViewVictim {
   viewVictimInformation(pVictimInformation) {
-    console.log(pVictimInformation);
     let victim = ``;
     victim += `<div class="container">
                <h3 class="h3">TARGET</h3>
