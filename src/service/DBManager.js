@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 class DBManager {
   customer=null
     constructor() {

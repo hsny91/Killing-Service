@@ -15,16 +15,15 @@
  * Manger, LocalStorage'dan aldigi musteri isimlerini ViewCustomer araciligi ile ekranda gosterir.
  * Manager,musteri isimlerine tiklandigi durumda musterinin oldurmek istedigi maktul isimlerini ViewVictim araciligi ile ekranda gosterir.
  * Manger, maktullerden herhangi biri uzerinde tiklandiginda maktulun adres bilgilerini, olu mu sag mi oldugunu ViewVictimStatus araciligi ile ekranda gosterir.
- * Manager, Maktul bilgilerinin oldugu ekranda, maktulun olmesi durumunda butona tiklayarak maktulun statusunu degistire
- * 
+ * Manager, Maktul bilgilerinin oldugu ekranda, maktulun olmesi durumunda butona tiklayarak maktulun statusunu degistirebilir.
  */
 
 
 //localStorage.clear();
 
-const viewCustomer=new ViewCustomer();// sepette guncellemeleri ekrana yazdiran  classi tutan degisken.
-const viewVictim= new ViewVictim;
-const viewVictimStatus=new ViewVictimStatus();
+const viewCustomer=new ViewCustomer();// musteri isimlerini ekrana yazdiran  classi tutan degisken.
+const viewVictim= new ViewVictim; // maktul isimlerini ekrana yazdiran classi tutan degisken
+const viewVictimStatus=new ViewVictimStatus(); // maktul adres ve status (olu sag) bilgilerini ekrana yazdiran classi tutan degisken
 new Manager(viewCustomer.viewCustomerInformation,
    viewVictim.viewVictimInformation,
    viewVictimStatus.viewVictimStatusInformation).start();
