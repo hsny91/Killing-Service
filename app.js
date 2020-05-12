@@ -96,7 +96,7 @@ degistir=()=>{
 console.log(storedNames) */
  
 
-new DBManager();
+//new DBManager();
 
 //localStorage.clear();
 
@@ -107,4 +107,4 @@ new Manager(viewCustomer.viewCustomerInformation,
    viewVictim.viewVictimInformation,
    viewVictimStatus.viewVictimStatusInformation).start();
 
-  
+ 

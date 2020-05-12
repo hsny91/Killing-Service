@@ -1,31 +1,34 @@
 class DBManager {
+  customer=null
     constructor() {
       this.db = localStorage;
         this.setInitialData();
+
     }
     setInitialData() {
-      let customer = [{
-        customerName: "Mehmet",
+      this.customer = [{
+        customerName:"Mehmet",
         victimList: [{victimName: "ahmet", victimAdress: ["adress1", "adres2", "adres3"], victimStatus: false},
                  { victimName: "ali",victimAdress: ["adress1", "adres2"],victimStatus: false}]
     },
     {
-        customerName: "Hasan",
+        customerName:"Hasan",
         victimList: [{victimName: "Ayse",victimAdress: ["adress1", "adres2"], victimStatus: false}]
     },
     {
-        customerName: "Huseyin",
+        customerName:"Huseyin",
         victimList: [{victimName: "Fatma", victimAdress: ["adress1"],victimStatus: false},
                   {victimName: "Kadir",victimAdress: ["adress1", "adres2", "adres3"],victimStatus: false}]
     },
     {
-      customerName: "Sevgi",
+      customerName:"Sevgi",
       victimList: [{victimName: "Gulsen", victimAdress: ["adress1"],victimStatus: false},
                 {victimName: "Burak",victimAdress: ["adress1", "adres2", "adres3"],victimStatus: false}]
   } 
     
 ]
-   this.checkData(customer);
+   //this.checkData(customer);
+  
     
 }
 checkData(pData){

@@ -1,8 +1,9 @@
 class ViewVictim{
     viewVictimInformation(pVictimInformation){
-       // console.log(pVictimInformation)
+       console.log(pVictimInformation)
        let victim = ``;
         victim+=`<div class="container">
+        <h3 class="h3">HEDEF</h3>
             <div class="row">`
          pVictimInformation.map((data) => {
             victim += `
@@ -23,7 +24,9 @@ class ViewVictim{
           }).join("");
           victim += ` </div>
         </div>
-        <hr> `;
+        <hr>
+        `
+        ;
         
         document.querySelector("victim").innerHTML = victim;
       }
