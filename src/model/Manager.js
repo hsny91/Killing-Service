@@ -1,79 +1,6 @@
 class Manager {
-  victimList=null;
-  storageList=null;
-  constructor( pViewCustomerInformation,pViewVictimInformation, pViewVictimStatusInformation ) {
-    this.dbManager = new DBManager();
-    this.viewCustomerInformation = pViewCustomerInformation;
-    this.viewVictimInformation = pViewVictimInformation;
-    this.viewVictimStatusInformation = pViewVictimStatusInformation;
-  }
-  start() {
-    this.storageList=this.dbManager.getItem("victim")
-    this.viewCustomerInformation( this.storageList);
-    this.checkCustomer();
-   
-  }
-  checkCustomer() {
-    this.storageList.map((pcustomer) => {
-      document
-        .querySelector(`#${pcustomer.customerName}`)
-        .addEventListener("click", this.checkToCustomer.bind(this));
-    });
-  }
-  checkToCustomer(item) {
-    this.storageList.map((customer) => {
-      if (item.target.id === customer.customerName){
-        this.viewVictimInformation(customer.victimList);
-        this.checkVictim(customer.victimList);
-        this.victimList=customer.victimList;
-      }
-    });
-   }
-  checkVictim(pVictimList){
-pVictimList.map((victim)=>{document.querySelector(`#${victim.victimName}`).addEventListener("click",this.checkToVictim.bind(this))
-})
-    
-  }
-  checkToVictim(item){
-     this.victimList.map((victim)=>{
-      if (item.target.id === victim.victimName){
-        this.viewVictimStatusInformation(victim);
-        this.checkVictimSatus(victim)
-      }
-     }) 
-       
-  }
-  checkVictimSatus(pVictim){
-    document.querySelector(`#${pVictim.victimName}-H`).addEventListener("click",()=>{
-    pVictim.victimStatus=!pVictim.victimStatus
-    //console.log(this.storageList)
-    this.dbManager.setItem("victim",this.storageList)
-    console.log(pVictim.victimStatus)
-    //this.viewVictimStatusInformation(pVictim);
-    if(pVictim.victimStatus)
-    document.querySelector(`#${pVictim.victimName}`).style.color="red";
-    else{
-      document.querySelector(`#${pVictim.victimName}`).style.color="black";
-    }
-   })
-   
-  }
-}
-
-
-
-ÄÄ
-
-
-
-
-
-
-
-
-
-/*class Manager {
-  victimList=null;
+  victimList = null;
+  storageList = null;
   constructor(
     pViewCustomerInformation,
     pViewVictimInformation,
@@ -85,57 +12,62 @@ pVictimList.map((victim)=>{document.querySelector(`#${victim.victimName}`).addEv
     this.viewVictimStatusInformation = pViewVictimStatusInformation;
   }
   start() {
-    this.viewCustomerInformation(this.dbManager.getItem("victim"));
+    this.storageList = this.dbManager.getItem("victim");
+    this.viewCustomerInformation(this.storageList);
     this.checkCustomer();
-   
   }
   checkCustomer() {
-    this.dbManager.getItem("victim").map((pcustomer) => {
+    this.storageList.map((pcustomer) => {
       document
         .querySelector(`#${pcustomer.customerName}`)
         .addEventListener("click", this.checkToCustomer.bind(this));
     });
   }
   checkToCustomer(item) {
-    this.dbManager.getItem("victim").map((customer) => {
-      if (item.target.id === customer.customerName){
+    this.storageList.map((customer) => {
+      if (item.target.id === customer.customerName) {
         this.viewVictimInformation(customer.victimList);
         this.checkVictim(customer.victimList);
-        this.victimList=customer.victimList;
+        this.victimList = customer.victimList;
+        this.statusControlled(this.victimList);
       }
     });
-   }
-  checkVictim(pVictimList){
-pVictimList.map((victim)=>{document.querySelector(`#${victim.victimName}`).addEventListener("click",this.checkToVictim.bind(this))
-})
-    
   }
-  checkToVictim(item){
-     this.victimList.map((victim)=>{
-      if (item.target.id === victim.victimName){
-        this.viewVictimStatusInformation(victim);
-        console.log(victim);
-        this.checkVictimSatus(victim)
+  statusControlled(plist) {
+    plist.map((deathorlive) => {
+      if (deathorlive.victimStatus == true) {
+        document.querySelector(`#${deathorlive.victimName}`).style.color =
+          "red";
+      } else {
+        document.querySelector(`#${deathorlive.victimName}`).style.color =
+          "black";
       }
-     }) 
-       
+    });
   }
-  /*checkVictimSatus(pVictim){
-    document.querySelector(`#${pVictim.victimName}-H`).addEventListener("click",()=>{
-    pVictim.victimStatus=!pVictim.victimStatus
-   let x= this.dbManager.getItem("victim").map(a=>{
-            return a.victimList;
-   })
-   x.map((a=>{
-     if(a.victimName===pVictim.victimName){
-    a.victimStatus=pVictim.victimStatus
- }
-   }))
-   console.log(this.dbManager.getItem("victim"))
-   console.log(x);
-   console.log(y);
-    console.log(pVictim.victimStatus)
 
-    })
-  }*/
-
+  checkVictim(pVictimList) {
+    pVictimList.map((victim) => {
+      document
+        .querySelector(`#${victim.victimName}`)
+        .addEventListener("click", this.checkToVictim.bind(this));
+    });
+  }
+  checkToVictim(item) {
+    this.victimList.map((victim) => {
+      if (item.target.id === victim.victimName) {
+        this.viewVictimStatusInformation(victim);
+        this.checkVictimSatus(victim);
+      }
+    });
+  }
+  checkVictimSatus(pVictim) {
+    document
+      .querySelector(`#${pVictim.victimName}-H`)
+      .addEventListener("click", () => {
+        pVictim.victimStatus = !pVictim.victimStatus;
+        this.dbManager.setItem("victim", this.storageList);
+        console.log(pVictim.victimStatus);
+        this.statusControlled(this.victimList);
+      });
+  }
+}
