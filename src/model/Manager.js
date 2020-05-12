@@ -42,7 +42,6 @@ pVictimList.map((victim)=>{document.querySelector(`#${victim.victimName}`).addEv
      this.victimList.map((victim)=>{
       if (item.target.id === victim.victimName){
         this.viewVictimStatusInformation(victim);
-        console.log(victim);
         this.checkVictimSatus(victim)
       }
      }) 
@@ -51,8 +50,8 @@ pVictimList.map((victim)=>{document.querySelector(`#${victim.victimName}`).addEv
   checkVictimSatus(pVictim){
     document.querySelector(`#${pVictim.victimName}-H`).addEventListener("click",()=>{
     pVictim.victimStatus=!pVictim.victimStatus
-   
- 
+    console.log(this.storageList)
+    this.dbManager.setItem("victim",this.storageList)
    })
    
   }
