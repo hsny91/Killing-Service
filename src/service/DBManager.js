@@ -10,22 +10,22 @@ class DBManager {
   setInitialData() {
     this.customer = [
       { customerName: "Mehmet",
-        victimList: [{ victimName: "ahmet",victimAdress: ["adress1", "adres2", "adres3"], victimStatus: false },
-                     {victimName: "ali", victimAdress: ["adress1", "adres2"],victimStatus: false}],
+        victimList: [{ victimName: "ahmet",victimAdress: ["Ulmenstrasse no:10", "Eichwillstrasse no:6", "Obergrundstrasse no:8"], victimStatus: false },
+                     {victimName: "ali", victimAdress: ["Ulmenstrasse no:11", "Eichwillstrasse no:7"],victimStatus: false}],
       },
       {
         customerName: "Hasan",
-        victimList: [{ victimName: "Ayse", victimAdress: ["adress1", "adres2"], victimStatus: false}],
+        victimList: [{ victimName: "Ayse", victimAdress: ["Ulmenstrasse no:12", "Eichwillstrasse no:8"], victimStatus: false}],
       },
       {
         customerName: "Huseyin",
-        victimList: [{victimName: "Fatma",victimAdress: ["adress1"],victimStatus: false },
-                     {victimName: "Kadir",victimAdress: ["adress1", "adres2", "adres3"],victimStatus: false}],
+        victimList: [{victimName: "Fatma",victimAdress: ["Ulmenstrasse no:13"],victimStatus: false },
+                     {victimName: "Kadir",victimAdress: ["Ulmenstrasse no:14", "Eichwillstrasse no:9", "Obergrundstrasse no:9"],victimStatus: false}],
       },
       {
         customerName: "Sevgi",
-        victimList:[{victimName: "Gulsen", victimAdress: ["adress1"],victimStatus: false},
-                    {victimName: "Burak", victimAdress: ["adress1", "adres2", "adres3"],victimStatus: false}],
+        victimList:[{victimName: "Gulsen", victimAdress: ["Ulmenstrasse no:15"],victimStatus: false},
+                    {victimName: "Burak", victimAdress: ["Ulmenstrasse no:16", "Eichwillstrasse no:10", "Obergrundstrasse no:10"],victimStatus: false}],
       },
     ];
     this.checkData(this.customer);

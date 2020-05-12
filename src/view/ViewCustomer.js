@@ -23,12 +23,10 @@ class ViewCustomer {
             </div>
         </div>
     </div>`;
-      })
-      .join("");
+      }).join("");
     customer += ` </div>
     </div>
-    <hr> <victim></victim>
-     `
+    <hr> <victim></victim> `
     document.querySelector("customer").innerHTML = customer;
   }
 }
