@@ -15,7 +15,7 @@
  * Manger, LocalStorage'dan aldigi musteri isimlerini ViewCustomer araciligi ile ekranda gosterir.
  * Manager,musteri isimlerine tiklandigi durumda musterinin oldurmek istedigi maktul isimlerini ViewVictim araciligi ile ekranda gosterir.
  * Manger, maktullerden herhangi biri uzerinde tiklandiginda maktulun adres bilgilerini, olu mu sag mi oldugunu ViewVictimStatus araciligi ile ekranda gosterir.
- * Manager, Maktul bilgilerinin oldugu ekranda, maktulun olmesi durumunda butona tiklayarak maktulun statusunu degistirebilir.
+ * Manager, maktul bilgilerinin oldugu ekranda, maktulun olmesi durumunda butona tiklayarak maktulun statusunu degistirebilir.
  */
 
 
